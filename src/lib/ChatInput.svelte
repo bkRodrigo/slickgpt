@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { ChatCompletionRequestMessage } from 'openai';
 	import { tick } from 'svelte';
-	import { textareaAutosizeAction } from 'svelte-legos';
 	import { focusTrap } from '@skeletonlabs/skeleton';
 	import { CodeBracket, PaperAirplane, CircleStack } from '@inqling/svelte-icons/heroicon-24-solid';
 	import { showModalComponent, showToast, track, type ChatCost } from '$misc/shared';
@@ -138,7 +137,6 @@
 
 		// tick is required for the action to resize the textarea
 		await tick();
-		textareaAutosizeAction(textarea);
 
 		calculateMessageTokens();
 	}
@@ -170,7 +168,6 @@
 							style="min-height: 42px"
 							rows="1"
 							placeholder="Enter to send, Shift+Enter for newline"
-							use:textareaAutosizeAction
 							on:keydown={handleKeyDown}
 							bind:value={input}
 							bind:this={textarea}
