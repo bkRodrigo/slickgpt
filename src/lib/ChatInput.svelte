@@ -167,6 +167,7 @@
 						<!-- Input -->
 						<textarea
 							class="textarea overflow-hidden"
+							style="min-height: 42px"
 							rows="1"
 							placeholder="Enter to send, Shift+Enter for newline"
 							use:textareaAutosizeAction
